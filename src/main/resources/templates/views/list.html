@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your description here"/>
+    <meta name="author" content="Your Name"/>
+    <title>List tickets</title>
+    <!-- Bootstrap CSS -->
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<br />
+<div class="container">
+    <ul class="nav nav-pills navbar">
+        <li class="active"><a href="#">Home</a></li>
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media">
+                <a href="#" class="thumbnail pull-left">
+                    <img th:src="@{/images/hector-lavoe.jpeg}" alt="El Cantante" />
+                </a>
+                <div class="media-body">
+                    <h4>Hector - <em>September 1, 2014</em></h4>
+                    <p>
+                        His last concert.
+                    </p>
+                </div>
+            </div>
+            <div class="media">
+                <a href="#" class="thumbnail pull-left">
+                    <img src="img/washington.jpg" alt="Washington" />
+                </a>
+                <div class="media-body">
+                    <h4 class="media-heading">Maria C. Twitter  - <em>September 15, 2014</em></h4>
+                    <p>
+                        I agree with Jay.  It has everything I ever wanted to know about finance and then some.  Please keep
+                        distributing this valuable information to the general public. These comment fields can go on and on or you
+                        can use CSS to limit the amount of comments that are displayed.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--
+    Bootstrap javascript and JQuery should be loaded
+    Placed at the end of the document for faster load times
+-->
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>
