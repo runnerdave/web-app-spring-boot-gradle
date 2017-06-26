@@ -4,45 +4,38 @@
       xmlns:th="http://www.thymleaf.org">
 <head>
     <meta charset="utf-8"/>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Your description here"/>
     <meta name="author" content="Your Name"/>
     <title>List tickets</title>
     <!-- Bootstrap CSS -->
-    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
 </head>
 <body>
-<br />
+<br/>
 <div class="container">
     <ul class="nav nav-pills navbar">
-        <li class="active"><a href="#">Home</a></li>
+        <li class="active"><a href="/">Home</a></li>
         <li><a href="#">About Us</a></li>
         <li><a href="#">Contact</a></li>
     </ul>
     <div class="row">
         <div class="col-md-12">
-            <div class="media">
+            <div class="media" th:each="gig : ${gigList}">
                 <a href="#" class="thumbnail pull-left">
-                    <img th:src="@{/images/hector-lavoe.jpeg}" alt="El Cantante" />
+                    <img th:src="'/images/' + ${gig.posterFile}" src="/images/willie-colon.jpg" height="80px" width="80px" alt="El Cantante"/>
                 </a>
-                <div class="media-body">
-                    <h4>Hector - <em>September 1, 2014</em></h4>
-                    <p>
-                        His last concert.
-                    </p>
-                </div>
-            </div>
-            <div class="media">
-                <a href="#" class="thumbnail pull-left">
-                    <img src="img/washington.jpg" alt="Washington" />
-                </a>
-                <div class="media-body">
-                    <h4 class="media-heading">Maria C. Twitter  - <em>September 15, 2014</em></h4>
-                    <p>
-                        I agree with Jay.  It has everything I ever wanted to know about finance and then some.  Please keep
-                        distributing this valuable information to the general public. These comment fields can go on and on or you
-                        can use CSS to limit the amount of comments that are displayed.
+                <div class="media-body container">
+                    <h4><span th:text="${gig.artist}">Hector</span></h4>
+                    <h5>Dates:<em th:text="${gig.dates}">September 1, 2014</em></h5>
+                    <p th:utext="${gig.blurb}">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus lorem at nibh ultricies, a
+                        vehicula risus condimentum. Proin metus erat, pulvinar eu mollis at, pulvinar a nibh. Sed
+                        lacinia pellentesque venenatis. Aenean molestie massa dui, quis congue mi euismod non.
+                        Suspendisse nec arcu ut tellus viverra elementum quis nec magna. Nullam purus tellus, dictum in
+                        mi nec, dictum fermentum nulla. Suspendisse vestibulum magna ac massa efficitur sagittis. Aenean
+                        pretium turpis lorem, in sagittis ipsum fermentum eu. Cras dictum, felis.
                     </p>
                 </div>
             </div>
