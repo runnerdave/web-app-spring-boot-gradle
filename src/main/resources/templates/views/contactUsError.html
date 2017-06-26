@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Your description here"/>
+    <meta name="author" content="Your Name"/>
+    <title>List tickets</title>
+    <!-- Bootstrap CSS -->
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+    <!-- main css-->
+    <link href="/static/css/main.css" th:href="@{/css/main.css}" rel="stylesheet"/>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="error-template">
+                <h1>
+                    Oops!</h1>
+                <h2>Don't call me, I'll call you</h2>
+                <div class="error-details">
+                    Sorry, an error has occured, you cannot contact us!
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div id="no-more-tables">
+                            <table class="col-md-12 table-bordered table-striped table-condensed cf">
+                                <thead class="cf">
+                                <tr>
+                                    <th>TimeStamp</th>
+                                    <th class="numeric">Status</th>
+                                    <th>Message</th>
+                                    <th>Error</th>
+                                    <th>Path</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td data-title="TimeStamp" th:text="${timestamp}">TimeStamp</td>
+                                    <td data-title="Status" th:text="${status}" class="numeric">Status</td>
+                                    <td data-title="Message" th:text="${message}">Message</td>
+                                    <td data-title="Error" th:text="${error}">Error</td>
+                                    <td data-title="Path" th:text="${path}">Path</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+                <div class="error-actions">
+                    <a href="/" class="btn btn-primary btn-lg"><span class="glyphicon glyphicon-home"></span>
+                        Take Me Home </a><a href="#" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-envelope"></span> Contact Support </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--
+    Bootstrap javascript and JQuery should be loaded
+    Placed at the end of the document for faster load times
+-->
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

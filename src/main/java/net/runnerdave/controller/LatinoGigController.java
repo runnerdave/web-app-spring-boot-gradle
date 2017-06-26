@@ -30,4 +30,9 @@ public class LatinoGigController {
     public String home() {
         return "index";
     }
+
+    @RequestMapping("/explode")
+    public String causeException() throws Exception {
+        throw new Exception("An explosion has occurred!");
+    }
 }
