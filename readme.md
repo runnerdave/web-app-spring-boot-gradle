@@ -45,4 +45,5 @@ The web app will simulate an online seller for music concerts.
 ``$java -jar build/libs/web-app-spring-boot-gradle-0.0.1-SNAPSHOT.jar``
                                                                                        
 ## See it in action
-[http://localhost:8899/]                                                                                       
+
+[http://localhost:8899/]()                                                                                       
