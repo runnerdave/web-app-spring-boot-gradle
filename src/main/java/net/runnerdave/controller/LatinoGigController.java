@@ -1,10 +1,13 @@
 package net.runnerdave.controller;
 
 import net.runnerdave.service.LatinoGigService;
+import net.runnerdave.service.impl.LatinoGigServiceListImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+
+import javax.annotation.Resource;
 
 /**
  * Created by runnerdave on 26/06/17.

@@ -6,9 +6,9 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="description" content="Your description here"/>
-    <meta name="author" content="Your Name"/>
-    <title>Page title</title>
+    <meta name="description" content="Your description here" th:attr="value=#{meta.description.home.page}"/>
+    <meta name="author" content="Your Name" th:attr="value=#{copyright}"/>
+    <title th:text="#{home.page.title}">Page title</title>
     <!-- Bootstrap CSS -->
     <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
 </head>
@@ -18,7 +18,7 @@
     <ul class="nav nav-pills navbar">
         <li class="active"><a href="#">Home</a></li>
         <li><a href="#">About Us</a></li>
-        <li><a href="/contactUsError">Contact</a></li>
+        <li><a href="/error">Contact</a></li>
     </ul>
     <div class="jumbotron">
         <h1>Latino Gig Guide</h1>
@@ -31,6 +31,7 @@
         </p>
     </div>
 </div>
+<div th:include="fragments/footer :: copy"></div>
 <!--
     Bootstrap javascript and JQuery should be loaded
     Placed at the end of the document for faster load times

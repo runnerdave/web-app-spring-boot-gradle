@@ -46,9 +46,6 @@ public class LatinoDB {
         gigs.add(ruben);
     }
 
-    private LatinoDB() {
-    }
-
     public static List<Concert> getGigs() {
         return Collections.unmodifiableList(gigs);
     }

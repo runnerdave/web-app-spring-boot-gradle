@@ -7,8 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <meta name="description" content="Your description here"/>
-    <meta name="author" content="Your Name"/>
-    <title>List tickets</title>
+    <meta name="author" content="Your Name" th:attr="value=#{copyright}"/>
+    <title th:text="#{global.controller.handler.page.title}">Error</title>
     <!-- Bootstrap CSS -->
     <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
     <!-- main css-->
@@ -33,7 +33,7 @@
         </div>
     </div>
 </div>
-
+<div th:include="fragments/footer :: copy"></div>
 <!--
     Bootstrap javascript and JQuery should be loaded
     Placed at the end of the document for faster load times
