@@ -3,6 +3,8 @@
 Simple demo that demonstrates the usage of:
 
 * Thymeleaf
+    * I18n
+    * fragments
 * Error handling
 * Exception handling with ControllerAdvice
 
@@ -46,4 +48,8 @@ The web app will simulate an online seller for music concerts.
                                                                                        
 ## See it in action
 
-[http://localhost:8899/]()                                                                                       
+[http://localhost:8899/]()       
+                                                                                
+## Possible Improvements                                                                                
+* use a drop down to select the language: http://www.baeldung.com/spring-boot-internationalization
+

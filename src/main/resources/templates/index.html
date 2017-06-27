@@ -15,19 +15,15 @@
 <body>
 <br />
 <div class="container">
-    <ul class="nav nav-pills navbar">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="/error">Contact</a></li>
-    </ul>
+    <div th:include="fragments/navigation :: copy"></div>
     <div class="jumbotron">
-        <h1>Latino Gig Guide</h1>
-        <p>Welcome to the place where you can find your dream latino concert.</p>
+        <h1 th:text="#{home.page.title}">Latino Gig Guide</h1>
+        <p th:utext="#{home.page.blurb}">Welcome to the place where you can find your dream latino concert.</p>
         <p>
-            <a class="btn btn-default" href="/listLatinoGigs" role="button">View concerts</a>
+            <a class="btn btn-default" href="/listLatinoGigs" role="button" th:utext="#{view.concerts.button}">View concerts</a>
         </p>
         <p>
-            <a class="btn btn-default" href="/explode" role="button">Cause an explosion</a>
+            <a class="btn btn-default" href="/explode" role="button" th:utext="#{cause.explosion.button}">Cause an explosion</a>
         </p>
     </div>
 </div>

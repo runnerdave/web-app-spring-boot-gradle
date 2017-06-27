@@ -1,0 +1,18 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="copy">
+    <ul class="nav nav-pills navbar">
+        <li class="active"><a href="/" th:utext="#{nav.home.button}">Home</a></li>
+        <li><a href="#" th:utext="#{nav.about.us.button}">About Us</a></li>
+        <li><a href="/contactErrorUs" th:utext="#{nav.contact.button}">Contact</a></li>
+    </ul>
+</div>
+
+</body>
+
+</html>

@@ -6,12 +6,14 @@ import org.springframework.boot.context.embedded.EmbeddedServletContainerCustomi
 import org.springframework.boot.web.servlet.ErrorPage;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpStatus;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
-import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
+import org.springframework.web.servlet.LocaleResolver;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter;
+import org.springframework.web.servlet.i18n.SessionLocaleResolver;
+
+import java.util.Locale;
 
 @SpringBootApplication
-public class WebAppSpringBootGradleApplication extends WebMvcConfigurerAdapter {
+public class WebAppSpringBootGradleApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(WebAppSpringBootGradleApplication.class, args);
@@ -24,4 +26,11 @@ public class WebAppSpringBootGradleApplication extends WebMvcConfigurerAdapter {
 			container.addErrorPages(custom404Page);
 		});
 	}
+
+    @Bean
+    public LocaleResolver localeResolver() {
+        SessionLocaleResolver slr = new SessionLocaleResolver();
+        slr.setDefaultLocale(new Locale("en", "AU"));
+        return slr;
+    }
 }

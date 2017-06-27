@@ -15,11 +15,7 @@
 <body>
 <br/>
 <div class="container">
-    <ul class="nav nav-pills navbar">
-        <li class="active"><a href="/">Home</a></li>
-        <li><a href="#">About Us</a></li>
-        <li><a href="/contactUsError">Contact</a></li>
-    </ul>
+    <div th:include="fragments/navigation :: copy"></div>
     <div class="row">
         <div class="col-md-12">
             <div class="media" th:each="gig : ${gigList}">
