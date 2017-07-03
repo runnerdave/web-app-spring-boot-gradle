@@ -1,0 +1,27 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+
+<body>
+
+<div th:fragment="copy">
+    <div class="container">
+        <div class="row">
+            <hr/>
+            <div class="col-lg-12">
+                <div class="col-md-8">
+                    <a href="#" th:utext="#{nav.footer.terms}">Terms of Service</a> | <a href="#" th:utext="#{nav.footer.privacy}">Privacy</a>
+                </div>
+                <div class="col-md-4">
+                    <p class="muted pull-right" th:utext="#{copyright}">&copy;© 2013 Company Name. All rights
+                        reserved</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+
+</html>

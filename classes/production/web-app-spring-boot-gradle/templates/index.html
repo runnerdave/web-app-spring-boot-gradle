@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="Your description here" th:attr="value=#{meta.description.home.page}"/>
+    <meta name="author" content="Your Name" th:attr="value=#{copyright}"/>
+    <title th:text="#{home.page.title}">Page title</title>
+    <!-- Bootstrap CSS -->
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
+</head>
+<body>
+<br />
+<div class="container">
+    <div th:include="fragments/navigation :: copy"></div>
+    <div class="jumbotron">
+        <h1 th:text="#{home.page.title}">Latino Gig Guide</h1>
+        <p th:utext="#{home.page.blurb}">Welcome to the place where you can find your dream latino concert.</p>
+        <p>
+            <a class="btn btn-default" href="/listLatinoGigs" role="button" th:utext="#{view.concerts.button}">View concerts</a>
+        </p>
+        <p>
+            <a class="btn btn-default" href="/explode" role="button" th:utext="#{cause.explosion.button}">Cause an explosion</a>
+        </p>
+    </div>
+</div>
+<div th:include="fragments/footer :: copy"></div>
+<!--
+    Bootstrap javascript and JQuery should be loaded
+    Placed at the end of the document for faster load times
+-->
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

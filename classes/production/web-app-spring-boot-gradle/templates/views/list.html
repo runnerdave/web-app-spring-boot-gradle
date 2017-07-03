@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymleaf.org">
+<head>
+    <meta charset="utf-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta name="description" content="Your description here"/>
+    <meta name="author" content="Your Name" th:attr="value=#{copyright}"/>
+    <title th:text="#{list.page.title}">List tickets</title>
+    <!-- Bootstrap CSS -->
+    <link href="webjars/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"/>
+</head>
+<body>
+<br/>
+<div class="container">
+    <div th:include="fragments/navigation :: copy"></div>
+    <div class="row">
+        <div class="col-md-12">
+            <div class="media" th:each="gig : ${gigList}">
+                <a href="#" class="thumbnail pull-left">
+                    <img th:src="'/images/' + ${gig.posterFile}" src="/images/willie-colon.jpg" height="80px" width="80px" alt="El Cantante"/>
+                </a>
+                <div class="media-body container">
+                    <h4><span th:text="${gig.artist}">Hector</span></h4>
+                    <h5>Dates:<em th:text="${gig.dates}">September 1, 2014</em></h5>
+                    <p th:utext="${gig.blurb}">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec cursus lorem at nibh ultricies, a
+                        vehicula risus condimentum. Proin metus erat, pulvinar eu mollis at, pulvinar a nibh. Sed
+                        lacinia pellentesque venenatis. Aenean molestie massa dui, quis congue mi euismod non.
+                        Suspendisse nec arcu ut tellus viverra elementum quis nec magna. Nullam purus tellus, dictum in
+                        mi nec, dictum fermentum nulla. Suspendisse vestibulum magna ac massa efficitur sagittis. Aenean
+                        pretium turpis lorem, in sagittis ipsum fermentum eu. Cras dictum, felis.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div th:include="fragments/footer :: copy"></div>
+<!--
+    Bootstrap javascript and JQuery should be loaded
+    Placed at the end of the document for faster load times
+-->
+<script src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script src="webjars/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</body>
+</html>

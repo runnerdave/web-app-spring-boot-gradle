@@ -1,6 +1,7 @@
 package net.runnerdave.db;
 
 import net.runnerdave.domain.Concert;
+import net.runnerdave.domain.ConcertDate;
 
 import java.time.LocalDate;
 import java.time.Month;
@@ -14,32 +15,50 @@ import java.util.List;
  */
 public class LatinoDB {
     private static List<Concert> gigs = new ArrayList<>();
+    private static List<ConcertDate> gigDates = new ArrayList<>();
 
     static {
-        Concert willie = new Concert();
-        willie.setArtist("Willie Colon");
-        willie.setBlurb("The last Willie Colon concert in Melbourne for 2014, with special guest: <strong>Oscar D'León</strong>. Once in " +
-                "a lifetime oportunity");
-        willie.setDates(Arrays.asList(LocalDate.of(2014, Month.SEPTEMBER, 15), LocalDate.of(2014, Month.SEPTEMBER, 16),
-                LocalDate.of(2014, Month.SEPTEMBER, 17), LocalDate.of(2014, Month.SEPTEMBER, 18)));
-        willie.setPosterFile("willie-colon.jpg");
-        willie.setVenue("The Forum");
+        ConcertDate concertDateWillie1 = new ConcertDate(LocalDate.of(2014, Month.SEPTEMBER, 15));
+        ConcertDate concertdateWillie2 = new ConcertDate(LocalDate.of(2014, Month.SEPTEMBER, 16));
+        ConcertDate concertDateWillie3 = new ConcertDate(LocalDate.of(2014, Month.SEPTEMBER, 17));
+        ConcertDate concertDateWillie4 = new ConcertDate(LocalDate.of(2014, Month.SEPTEMBER, 18));
+        gigDates.add(concertDateWillie1);
+        gigDates.add(concertdateWillie2);
+        gigDates.add(concertDateWillie3);
+        gigDates.add(concertDateWillie4);
+        Concert willie = new Concert("Willie Colon",
+                "willie-colon.jpg",
+                Arrays.asList(concertDateWillie1,
+                        concertdateWillie2,
+                        concertDateWillie3,
+                        concertDateWillie4),
+                "The last Willie Colon concert in Melbourne for 2014, with special guest: <strong>Oscar D'León</strong>. Once in " +
+                        "a lifetime oportunity",
+                "The Forum");
 
-        Concert hector = new Concert();
-        hector.setArtist("Hector Lavoe");
-        hector.setBlurb("For the first time in Melbourne, with special guest: <strong>Celia Cruz</strong>. Once in " +
-                "a lifetime oportunity");
-        hector.setDates(Arrays.asList(LocalDate.of(2014, Month.OCTOBER, 19), LocalDate.of(2014, Month.OCTOBER, 20),
-                LocalDate.of(2014, Month.OCTOBER, 21)));
-        hector.setPosterFile("hector-lavoe.jpeg");
-        hector.setVenue("Sydney Myer Bowl");
+        ConcertDate concertDateHector1 = new ConcertDate(LocalDate.of(2014, Month.OCTOBER, 19));
+        ConcertDate concertDateHector2 = new ConcertDate(LocalDate.of(2014, Month.OCTOBER, 20));
+        ConcertDate concertDateHector3 = new ConcertDate(LocalDate.of(2014, Month.OCTOBER, 21));
+        gigDates.add(concertDateHector1);
+        gigDates.add(concertDateHector2);
+        gigDates.add(concertDateHector3);
 
-        Concert ruben = new Concert();
-        ruben.setArtist("Ruben Blades");
-        ruben.setBlurb("Ruben Blades again in Melbourne this time with a whole new style, with special guest: <strong>La India</strong>. Only one show.");
-        ruben.setDates(Collections.singletonList(LocalDate.of(2014, Month.DECEMBER, 15)));
-        ruben.setPosterFile("ruben-blades.jpg");
-        ruben.setVenue("The Forum");
+        Concert hector = new Concert("Hector Lavoe",
+                "hector-lavoe.jpeg",
+                Arrays.asList(concertDateHector1,
+                        concertDateHector2,
+                        concertDateHector3),
+                "For the first time in Melbourne, with special guest: <strong>Celia Cruz</strong>. Once in " +
+                        "a lifetime oportunity",
+                "Sydney Myer Bowl");
+
+        ConcertDate concertDateRuben = new ConcertDate(LocalDate.of(2014, Month.DECEMBER, 15));
+        Concert ruben = new Concert("Ruben Blades",
+                "ruben-blades.jpg",
+                Collections.singletonList(concertDateRuben),
+                "Ruben Blades again in Melbourne this time with a whole new style, with special guest: <strong>La India</strong>. Only one show.",
+                "The Forum");
+        gigDates.add(concertDateRuben);
 
         gigs.add(willie);
         gigs.add(hector);
@@ -50,5 +69,5 @@ public class LatinoDB {
         return Collections.unmodifiableList(gigs);
     }
 
-
+    public static List<ConcertDate> getGigDates() { return Collections.unmodifiableList(gigDates); }
 }
