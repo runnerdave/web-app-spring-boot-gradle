@@ -7,6 +7,8 @@ Simple demo that demonstrates the usage of:
     * fragments
 * Error handling
 * Exception handling with ControllerAdvice
+* JPA mapping
+* h2 database
 
 ## Problem
 ### Exercise
